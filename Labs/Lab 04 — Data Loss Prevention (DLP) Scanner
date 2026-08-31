@@ -1,0 +1,99 @@
+# Lab 04 — Data Loss Prevention (DLP) Scanner
+
+## Hands-On Activities
+
+### Test Data Creation
+
+* Created a dedicated test directory containing multiple `.txt` files.
+* Created normal test files containing non-sensitive information.
+* Created synthetic test files containing dummy sensitive information for detection testing.
+* Used test data representing examples such as:
+
+  * Email addresses
+  * CNIC numbers
+  * Credit-card-like numbers
+  * Credential-related information
+  * Confidential information
+
+### Python DLP Scanner
+
+* Developed a Python-based DLP scanner to inspect files for potentially sensitive information.
+* Used Python's `os` module to enumerate files within the test directory.
+* Read and processed the contents of each test file automatically.
+
+### Regex-Based Detection
+
+* Used Python's `re` module to implement pattern-based detection.
+* Created regular expressions for identifying structured sensitive information.
+* Implemented detection patterns for:
+
+  * CNIC numbers
+  * Email addresses
+  * Credit-card-like numbers
+* Added keyword-based detection for other potentially sensitive information.
+
+### DLP Alerts & Policy Actions
+
+* Implemented console alerts when sensitive information was detected.
+* Identified the type of sensitive information found.
+* Identified the file containing the detected information.
+* Implemented different policy responses depending on the type of detected information, including:
+
+  * Block
+  * Alert and log
+  * Alert and encrypt
+  * Alert and block
+
+### File Integrity Extension
+
+* Extended the DLP scanner with a document integrity check.
+* Used **SHA-256 hashing** to calculate a file's current hash.
+* Compared the calculated hash against a known reference hash.
+* Generated an alert when the calculated hash did not match the reference value.
+
+## Detection Workflow
+
+```text id="8f5db8"
+Test Files
+    ↓
+File Enumeration
+    ↓
+Read File Contents
+    ↓
+Regex / Keyword Detection
+    ↓
+Sensitive Data Found?
+    ↓
+Policy Response
+    ↓
+Alert / Log / Block
+```
+
+The file-integrity component adds:
+
+```text id="a4j8ne"
+File
+ ↓
+SHA-256 Hash
+ ↓
+Compare with Reference
+ ↓
+Match / Mismatch
+ ↓
+Integrity Result
+```
+
+## Tools & Technologies
+
+* Python
+* Regular Expressions (`re`)
+* File handling (`os`)
+* PowerShell
+* SHA-256
+* Synthetic test data
+
+## Related Project
+
+The complete implementation of the DLP scanner is available here:
+
+[**DLP Scanner & File Integrity Monitor**](https://github.com/hamzahussain8a-rgb/DLP-Scanner)
