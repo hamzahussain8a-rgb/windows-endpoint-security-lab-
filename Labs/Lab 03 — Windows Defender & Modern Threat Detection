@@ -1,0 +1,76 @@
+# Lab 03 — Windows Defender & Modern Threat Detection
+
+## Hands-On Activities
+
+### Windows Defender Exploration
+
+* Explored the **Windows Security** dashboard and reviewed the available security features.
+* Examined Microsoft Defender Antivirus configuration and protection options.
+* Reviewed available security controls for protecting the Windows endpoint.
+* Investigated Defender-related settings and their role in endpoint protection.
+
+---
+
+## EICAR Antivirus Detection Test
+
+* Used the **EICAR test file** to safely validate antivirus detection without using real malware.
+* Observed Microsoft Defender detecting the test file.
+* Reviewed the resulting Defender response and security notification.
+* Examined how a detected file is handled by the antivirus engine.
+* Reviewed available security event/history information associated with the detection.
+
+---
+
+## Defender Security Baseline
+
+* Reviewed Windows Defender configuration settings relevant to endpoint protection.
+* Explored how Defender settings can be controlled to prevent users from weakening endpoint security.
+* Investigated security-baseline concepts for maintaining consistent antivirus protection.
+* Examined configuration options designed to prevent unauthorized or accidental changes to security controls.
+
+---
+
+## Defender PowerShell Management
+
+* Used PowerShell to query and manage Microsoft Defender configuration.
+* Explored Defender status and configuration through PowerShell.
+* Used command-line administration as an alternative to the Windows Security graphical interface.
+* Investigated how PowerShell can support automated endpoint security administration and incident-response workflows.
+
+---
+
+## Attack Surface Reduction (ASR)
+
+* Explored **Microsoft Defender Attack Surface Reduction (ASR)** rules.
+* Reviewed how ASR rules restrict potentially risky application and system behaviors.
+* Investigated ASR rules designed to reduce attack techniques involving applications such as Office and PowerShell.
+* Tested ASR protections in the Windows security lab environment.
+
+---
+
+## Security Validation Workflow
+
+The exercises followed a basic endpoint protection validation process:
+
+```text
+Configure Protection
+        ↓
+Generate Safe Test Activity
+        ↓
+Defender Detection
+        ↓
+Security Response
+        ↓
+Review Alert / Event
+        ↓
+Verify Protection
+```
+
+## Tools Used
+
+* Windows Security
+* Microsoft Defender Antivirus
+* PowerShell
+* Microsoft Defender ASR
+* Event Viewer / Windows Security History
+* EICAR test file
