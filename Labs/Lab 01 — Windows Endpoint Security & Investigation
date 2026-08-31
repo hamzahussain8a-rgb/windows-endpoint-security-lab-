@@ -1,0 +1,103 @@
+# Lab 01 — Windows Endpoint Security & Investigation
+
+## Hands-On Activities
+
+### Windows Security & Administration Tools
+
+* Explored **Task Manager** to examine running applications, processes, and system resource usage.
+* Explored **Resource Monitor** to examine CPU, memory, disk, and network activity.
+* Explored **Task Scheduler** and reviewed scheduled tasks configured on Windows.
+* Explored **Event Viewer** and reviewed Windows system and security event logs.
+* Explored **Device Manager** to review installed devices and drivers.
+* Explored **Disk Management** to examine disks, partitions, and volumes.
+* Used **System Information (`msinfo32`)** to inspect Windows system and hardware configuration.
+* Explored **Services (`services.msc`)** to review running Windows services and their configurations.
+* Used **Command Prompt and PowerShell** for basic endpoint information gathering and investigation.
+
+---
+
+## Endpoint Investigation Activities
+
+### Process Investigation
+
+* Investigated running Windows processes using PowerShell.
+* Examined process names and process IDs.
+* Investigated parent and child process relationships.
+* Used process information to understand how activity on the endpoint could be traced.
+
+### Network Investigation
+
+* Used PowerShell to inspect active network connections.
+* Used `Get-NetTCPConnection` to identify established connections.
+* Reviewed connection state, local/remote addresses, ports, and associated processes.
+
+### DNS Investigation
+
+* Used PowerShell to investigate DNS activity.
+* Used `Resolve-DnsName` to perform DNS resolution.
+* Used `Get-DnsClientCache` to examine cached DNS records.
+* Used DNS information as additional context when investigating endpoint activity.
+
+### Windows Service Investigation
+
+* Queried Windows services using PowerShell.
+* Reviewed service names, status, and configuration information.
+* Investigated services as part of understanding endpoint activity and potential persistence mechanisms.
+
+### Startup Application Investigation
+
+* Queried Windows startup entries using PowerShell.
+* Reviewed programs configured to execute during system startup.
+* Used startup information as part of endpoint investigation and persistence analysis.
+
+### File Integrity Investigation
+
+* Used PowerShell `Get-FileHash` to calculate **SHA-256** file hashes.
+* Used hashes to identify files and verify whether file contents had changed.
+
+### Windows Security Auditing
+
+* Configured Windows auditing policies for **account logon and logoff events**.
+* Enabled auditing for both **successful and failed** activity.
+* Reviewed the resulting security events through Windows Event Viewer.
+* Used authentication events as a source of information for endpoint investigation.
+
+---
+
+## Investigation Workflow
+
+The activities developed a basic endpoint investigation workflow:
+
+```text
+Windows Endpoint
+       ↓
+Event / Process Activity
+       ↓
+PowerShell Investigation
+       ↓
+Process / Service / Startup Analysis
+       ↓
+Network / DNS Investigation
+       ↓
+File Hash Verification
+       ↓
+Event Correlation
+       ↓
+Security Assessment
+```
+
+## Tools Used
+
+* Windows 11
+* PowerShell
+* Event Viewer
+* Task Manager
+* Resource Monitor
+* Task Scheduler
+* Services
+* Device Manager
+* Disk Management
+* System Information
+* Command Prompt
+* Windows Security Auditing
+* SHA-256
