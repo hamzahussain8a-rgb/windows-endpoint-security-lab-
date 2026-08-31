@@ -1,0 +1,91 @@
+# Lab 02 — Windows Virtualization & Policy Enforcement
+
+## Hands-On Activities
+
+### Windows Virtual Machine
+
+* Created a Windows-based virtual machine using a hypervisor.
+* Configured the VM and allocated system resources for the Windows environment.
+* Used the virtual machine as an isolated environment for subsequent security configuration and testing.
+* Created VM snapshots to preserve and revert the system state during security exercises.
+
+---
+
+## Local Security Policy
+
+* Explored the **Local Security Policy** interface using `secpol.msc`.
+* Reviewed Windows security policies related to authentication and account security.
+* Configured a **minimum password length of 12 characters**.
+* Configured an **Account Lockout Policy** to lock an account after **3 invalid login attempts**.
+* Set the account lockout duration to **15 minutes**.
+* Observed how local security policies can enforce authentication security requirements.
+
+---
+
+## Local Group Policy
+
+* Explored the **Local Group Policy Editor** using `gpedit.msc`.
+* Reviewed policies available for controlling Windows system configuration and user access.
+* Configured the policy **"Prohibit access to Control Panel and PC settings."**
+* Tested the effect of the policy on the user's ability to access system configuration settings.
+
+---
+
+## Windows Defender Firewall with Advanced Security
+
+* Opened **Windows Defender Firewall with Advanced Security** using `wf.msc`.
+* Explored inbound and outbound firewall rules.
+* Created a custom firewall rule to block network traffic associated with a selected web browser.
+* Tested the rule to observe its effect on browser network connectivity.
+* Reviewed how firewall rules can be used to control application network access.
+
+---
+
+## AppLocker
+
+* Explored **AppLocker** application-control policies.
+* Created an executable rule targeting `powershell.exe`.
+* Configured the rule to prevent users from launching PowerShell.
+* Tested the policy and observed the effect of application control on PowerShell execution.
+
+---
+
+## Advanced Audit Policy Configuration
+
+* Explored **Advanced Audit Policy Configuration**.
+* Configured auditing for **Audit Logon — Success and Failure**.
+* Generated an intentionally failed login attempt on the test machine.
+* Reviewed the resulting Windows Security event in Event Viewer.
+* Used the generated event to understand how authentication activity can be recorded and investigated.
+
+---
+
+## Security Testing Approach
+
+The activities followed a basic configuration → test → observe workflow:
+
+```text
+Configure Security Policy
+        ↓
+Apply Policy
+        ↓
+Perform Test Activity
+        ↓
+Observe System Behaviour
+        ↓
+Review Security Events
+        ↓
+Verify Policy Enforcement
+```
+
+## Tools Used
+
+* Windows 11
+* Hypervisor / Virtual Machine
+* `secpol.msc`
+* `gpedit.msc`
+* Windows Defender Firewall with Advanced Security (`wf.msc`)
+* AppLocker
+* Advanced Audit Policy Configuration
+* Event Viewer
+* PowerShell
